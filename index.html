@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Magasin - Vente de Produits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛍️ MON MAGASIN</h1>
+            </div>
+            <nav class="nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#produits">Produits</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h2>Bienvenue dans mon magasin</h2>
+            <p>Découvrez nos produits de qualité à des prix imbattables</p>
+            <button class="btn-primary" onclick="scrollToProduits()">Voir les produits</button>
+        </div>
+    </section>
+
+    <!-- Panier (Sidebar) -->
+    <aside id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Mon Panier</h2>
+            <button class="close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p>Votre panier est vide</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: </strong>
+                <span id="cart-total">0€</span>
+            </div>
+            <button class="btn-primary" onclick="checkout()">Passer la commande</button>
+            <button class="btn-secondary" onclick="toggleCart()">Continuer vos achats</button>
+        </div>
+    </aside>
+
+    <!-- Overlay pour fermer le panier -->
+    <div id="cart-overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <!-- Produits -->
+    <section id="produits" class="products">
+        <div class="container">
+            <h2>Nos Produits</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Les produits seront générés par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Nous Contacter</h2>
+            <form class="contact-form" onsubmit="sendMessage(event)">
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" rows="5" required></textarea>
+                <button type="submit" class="btn-primary">Envoyer</button>
+            </form>
+            <div class="contact-info">
+                <p>📧 Email: contact@monmagasin.com</p>
+                <p>📞 Téléphone: +33 1 23 45 67 89</p>
+                <p>📍 Adresse: 123 Rue du Commerce, 75000 Paris</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Mon Magasin. Tous droits réservés.</p>
+        <p>Créé avec ❤️ par cloudstepexe-byte</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
